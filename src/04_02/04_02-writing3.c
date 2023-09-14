@@ -4,19 +4,19 @@ int main()
 {
 	FILE *fh;
 
-	/* open the file for appending */
-	fh = fopen("alphabet.txt","a");
-	if( fh == NULL )
+	// Open/create the file
+	fh = fopen("alphabet.txt", "a");
+	if (fh == NULL)
 	{
-		puts("Failed to open file");
-		return(1);
+		puts("Failed to open file.");
+		return (1);
 	}
 
-	/* output */
-	fputc('\n',fh);
+	// Output
+	fputc('\n', fh);
 
-	/* close the file */
+	// Close the file
 	fclose(fh);
 
-	return(0);
+	return (0);
 }

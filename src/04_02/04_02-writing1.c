@@ -4,19 +4,19 @@ int main()
 {
 	FILE *fh;
 
-	/* open/create the file */
-	fh = fopen("output.txt","w");
-	if( fh == NULL )
+	// Open/create the file
+	fh = fopen("output.txt", "w");
+	if (fh == NULL)
 	{
-		puts("Failed to create file");
-		return(1);
+		puts("Failed to create file.");
+		return (1);
 	}
 
-	/* output a line of text */
-	fprintf(fh,"Hello there, file!\n");
+	// Output a line of text
+	fprintf(fh, "Hello there, file!\n");
 
-	/* close the file */
+	// Close the file
 	fclose(fh);
 
-	return(0);
+	return (0);
 }

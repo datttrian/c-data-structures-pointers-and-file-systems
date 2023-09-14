@@ -4,24 +4,25 @@ int main()
 {
 	const char filename[] = "integers.dat";
 	FILE *fp;
-	int x,a[10];
+	int a;
 
-	/* open the file for reading */
-	fp = fopen(filename,"r");
-	if( fp == NULL )
+	// Create and open the file
+	fp = fopen(filename, "r");
+	if (fp == NULL)
 	{
-		printf("Unable to create %s\n",filename);
-		return(1);
+		printf("Unable to create %s\n", filename);
+		return (1);
 	}
 
-	/* read integers */
-	fread(&a, sizeof(int), 10, fp );
-	for(x=0;x<10;x++)
-		printf("%d\n",a[x]);
+	// Read integers
+	for (int i = 0; i < 10; i++)
+	{
+		fread(&a, sizeof(int), 1, fp);
+		printf("%d\n", a);
+	}
 
-	/* close */
+	// Close the file
 	fclose(fp);
 
-	return(0);
+	return (0);
 }
-

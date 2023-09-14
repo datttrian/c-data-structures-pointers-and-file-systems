@@ -4,27 +4,26 @@ int main()
 {
 	const char filename[] = "integers.dat";
 	FILE *fp;
-	int x,a;
+	int a;
 
-	/* open and create the file */
-	fp = fopen(filename,"w");
-	if( fp == NULL )
+	// Open and create the file
+	fp = fopen(filename, "w");
+	if (fp == NULL)
 	{
-		printf("Unable to create %s\n",filename);
-		return(1);
+		printf("Unable to create %s\n", filename);
+		return (1);
 	}
 
-	/* write the integers */
+	// Write the integers
 	a = 10;
-	for(x=0;x<10;x++)
+	for (int i = 0; i < 10; i++)
 	{
 		fwrite(&a, sizeof(int), 1, fp);
 		a += 5;
 	}
 
-	/* and remember to close */
+	// Close the file
 	fclose(fp);
 
-	return(0);
+	return (0);
 }
-

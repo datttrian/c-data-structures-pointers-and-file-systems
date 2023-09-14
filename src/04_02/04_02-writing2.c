@@ -3,22 +3,21 @@
 int main()
 {
 	FILE *fh;
-	int a;
 
-	/* open/create the file */
-	fh = fopen("alphabet.txt","w");
-	if( fh == NULL )
+	// Open/create the file
+	fh = fopen("alphabet.txt", "w");
+	if (fh == NULL)
 	{
-		puts("Failed to create file");
-		return(1);
+		puts("Failed to create file.");
+		return (1);
 	}
 
-	/* output */
-	for(a='A';a<='Z';a++)
-		fputc(a,fh);
+	// Output the alphabet
+	for (int i = 'A'; i <= 'Z'; i++)
+		fputc(i, fh);
 
-	/* close the file */
+	// Close the file
 	fclose(fh);
 
-	return(0);
+	return (0);
 }
